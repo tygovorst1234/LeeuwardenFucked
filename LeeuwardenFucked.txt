@@ -1,0 +1,134 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local LeeuwardenFucked = Instance.new("ScreenGui")
+local buttons = Instance.new("Frame")
+local Titel = Instance.new("TextLabel")
+local Wanted = Instance.new("TextButton")
+local _0Wanted = Instance.new("TextButton")
+local IY = Instance.new("TextButton")
+local Scooter = Instance.new("TextButton")
+local AFK = Instance.new("TextButton")
+local Destroy = Instance.new("TextButton")
+
+--Properties:
+
+LeeuwardenFucked.Name = "LeeuwardenFucked"
+LeeuwardenFucked.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+LeeuwardenFucked.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+LeeuwardenFucked.ResetOnSpawn = false
+
+buttons.Name = "buttons"
+buttons.Parent = LeeuwardenFucked
+buttons.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+buttons.BackgroundTransparency = 0.750
+buttons.Position = UDim2.new(0.5, -100, 0.5, -100)
+buttons.Size = UDim2.new(0, 200, 0, 270)
+buttons.Draggable = true
+buttons.Active = true
+buttons.Selectable = true
+
+Titel.Name = "Titel"
+Titel.Parent = buttons
+Titel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Titel.BackgroundTransparency = 0.750
+Titel.Size = UDim2.new(0, 200, 0, 19)
+Titel.Font = Enum.Font.SourceSans
+Titel.Text = "Leeuwarden fucked"
+Titel.TextColor3 = Color3.fromRGB(0, 0, 0)
+Titel.TextScaled = true
+Titel.TextSize = 14.000
+Titel.TextWrapped = true
+
+Wanted.Name = "Wanted"
+Wanted.Parent = buttons
+Wanted.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Wanted.BackgroundTransparency = 0.900
+Wanted.Position = UDim2.new(0, 0, 0.071296297, 0)
+Wanted.Size = UDim2.new(0, 200, 0, 50)
+Wanted.Font = Enum.Font.SourceSans
+Wanted.Text = "Remove wanted service"
+Wanted.TextColor3 = Color3.fromRGB(0, 0, 0)
+Wanted.TextSize = 20.000
+Wanted.TextWrapped = true
+
+_0Wanted.Name = "0Wanted"
+_0Wanted.Parent = buttons
+_0Wanted.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+_0Wanted.BackgroundTransparency = 0.900
+_0Wanted.Position = UDim2.new(0, 0, 0.256296277, 0)
+_0Wanted.Size = UDim2.new(0, 200, 0, 50)
+_0Wanted.Font = Enum.Font.SourceSans
+_0Wanted.Text = "Remove wanted level"
+_0Wanted.TextColor3 = Color3.fromRGB(0, 0, 0)
+_0Wanted.TextSize = 20.000
+
+IY.Name = "IY"
+IY.Parent = buttons
+IY.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+IY.BackgroundTransparency = 0.900
+IY.Position = UDim2.new(0.904999971, 0, -0.00105816871, 0)
+IY.Size = UDim2.new(0, 19, 0, 19)
+IY.Font = Enum.Font.SourceSans
+IY.Text = "IY"
+IY.TextColor3 = Color3.fromRGB(0, 0, 0)
+IY.TextSize = 20.000
+
+Scooter.Name = "Scooter"
+Scooter.Parent = buttons
+Scooter.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Scooter.BackgroundTransparency = 0.900
+Scooter.Position = UDim2.new(0, 0, 0.624296308, 0)
+Scooter.Size = UDim2.new(0, 200, 0, 50)
+Scooter.Font = Enum.Font.SourceSans
+Scooter.Text = "Use scooter when wanted"
+Scooter.TextColor3 = Color3.fromRGB(0, 0, 0)
+Scooter.TextSize = 20.000
+
+AFK.Name = "AFK"
+AFK.Parent = buttons
+AFK.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+AFK.BackgroundTransparency = 0.900
+AFK.Position = UDim2.new(0, 0, 0.439682454, 0)
+AFK.Size = UDim2.new(0, 200, 0, 50)
+AFK.Font = Enum.Font.SourceSans
+AFK.Text = "Remove Anti-AFK"
+AFK.TextColor3 = Color3.fromRGB(0, 0, 0)
+AFK.TextSize = 20.000
+
+AFK.MouseButton1Click:Connect(function()
+	game:GetService("Players").LocalPlayer.PlayerScripts.AFK:Destroy()
+end)
+
+Destroy.Name = "Destroy"
+Destroy.Parent = buttons
+Destroy.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Destroy.BackgroundTransparency = 0.900
+Destroy.Position = UDim2.new(0, 0, -0.00105816871, 0)
+Destroy.Size = UDim2.new(0, 19, 0, 19)
+Destroy.Font = Enum.Font.SourceSans
+Destroy.Text = "X"
+Destroy.TextColor3 = Color3.fromRGB(0, 0, 0)
+Destroy.TextSize = 20.000
+
+_0Wanted.MouseButton1Click:Connect(function()
+	game:GetService("Players").LocalPlayer.Wanted.Value = 0
+end)
+
+Wanted.MouseButton1Click:Connect(function()
+	game:GetService("Players").LocalPlayer.PlayerScripts.WantedService:Destroy()
+end)
+
+IY.MouseButton1Click:connect(function()
+   loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+Scooter.MouseButton1Click:Connect(function()
+	game:GetService("Players").LocalPlayer.Backpack.scooter.LocalScript:Destroy()
+end)
+
+Destroy.MouseButton1Click:Connect(function()
+	LeeuwardenFucked:Destroy()
+end)
